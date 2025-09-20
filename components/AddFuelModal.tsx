@@ -63,7 +63,7 @@ const AddFuelModal: React.FC<AddFuelModalProps> = ({ onClose, onSave }) => {
 
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-start justify-center z-50 p-4 pt-20">
       <div className="bg-slate-800/80 border border-slate-700 rounded-xl shadow-xl w-full max-w-sm p-6 space-y-4">
         <h2 className="text-xl font-bold text-white">Add Fuel Entry</h2>
         
