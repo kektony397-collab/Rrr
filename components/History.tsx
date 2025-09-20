@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { getFuelEntries, getTripRecords } from '../services/db';
 import { FuelEntry, TripRecord } from '../types';
@@ -34,27 +33,27 @@ const History: React.FC = () => {
   }, [loadHistory]);
 
   const FuelCard: React.FC<{ item: FuelEntry }> = ({ item }) => (
-    <div className="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+    <div className="bg-slate-800 p-4 rounded-xl flex justify-between items-center">
       <div>
-        <p className="font-bold text-green-400">Fuel Added</p>
-        <p className="text-sm text-gray-400">{new Date(item.date).toLocaleString()}</p>
+        <p className="font-bold text-emerald-400">Fuel Added</p>
+        <p className="text-sm text-slate-400">{new Date(item.date).toLocaleString()}</p>
       </div>
       <div className="text-right">
         <p className="text-lg font-semibold">{item.liters.toFixed(2)} L</p>
-        <p className="text-sm text-gray-300">₹{item.amountINR.toFixed(2)}</p>
+        <p className="text-sm text-slate-300">₹{item.amountINR.toFixed(2)}</p>
       </div>
     </div>
   );
 
   const TripCard: React.FC<{ item: TripRecord }> = ({ item }) => (
-    <div className="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+    <div className="bg-slate-800 p-4 rounded-xl flex justify-between items-center">
       <div>
-        <p className="font-bold text-cyan-400">Trip Completed</p>
-        <p className="text-sm text-gray-400">{new Date(item.date).toLocaleString()}</p>
+        <p className="font-bold text-sky-400">Trip Completed</p>
+        <p className="text-sm text-slate-400">{new Date(item.date).toLocaleString()}</p>
       </div>
       <div className="text-right">
         <p className="text-lg font-semibold">{item.distance.toFixed(2)} km</p>
-        <p className="text-sm text-gray-300">~{item.fuelConsumed.toFixed(2)} L used</p>
+        <p className="text-sm text-slate-300">~{item.fuelConsumed.toFixed(2)} L used</p>
       </div>
     </div>
   );
@@ -63,9 +62,9 @@ const History: React.FC = () => {
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4 text-center text-white">History</h1>
       {loading ? (
-        <p className="text-center text-gray-400">Loading history...</p>
+        <p className="text-center text-slate-400">Loading history...</p>
       ) : items.length === 0 ? (
-        <p className="text-center text-gray-400">No history found. Start a trip or add fuel to get started.</p>
+        <p className="text-center text-slate-400 px-4">No history found. Start a trip or add fuel to get started.</p>
       ) : (
         <div className="space-y-3">
           {items.map((item) =>

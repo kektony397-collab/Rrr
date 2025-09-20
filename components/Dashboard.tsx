@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Speedometer from './Speedometer';
 import AddFuelModal from './AddFuelModal';
@@ -7,9 +6,9 @@ import { DEFAULT_MILEAGE_KMPL } from '../constants';
 import { TripRecord } from '../types';
 
 const InfoCard: React.FC<{ label: string; value: string; unit: string }> = ({ label, value, unit }) => (
-  <div className="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+  <div className="bg-slate-800 p-4 rounded-xl text-center shadow-lg">
     <div className="text-3xl font-bold text-white">{value}</div>
-    <div className="text-sm text-gray-400">{label} ({unit})</div>
+    <div className="text-sm text-slate-400">{label} ({unit})</div>
   </div>
 );
 
@@ -135,7 +134,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className="p-4 flex flex-col items-center gap-6">
       {geoError && (
-          <div className="w-full p-4 mb-4 text-sm text-red-200 bg-red-800 rounded-lg" role="alert">
+          <div className="w-full p-4 mb-4 text-sm text-red-300 bg-red-900/50 border border-red-500/30 rounded-lg" role="alert">
               <span className="font-medium">Geolocation Error:</span> {geoError}
           </div>
       )}
@@ -149,17 +148,17 @@ const Dashboard: React.FC = () => {
       <div className="w-full max-w-md flex flex-col gap-4">
         <button
           onClick={isTripActive ? stopTrip : startTrip}
-          className={`w-full py-4 px-6 text-xl font-bold rounded-full transition-all duration-300 shadow-lg transform active:scale-95 ${
+          className={`w-full py-4 px-6 text-xl font-bold rounded-xl transition-all duration-300 shadow-lg transform active:scale-95 ${
             isTripActive
-              ? 'bg-red-600 hover:bg-red-700 text-white'
-              : 'bg-cyan-500 hover:bg-cyan-600 text-gray-900'
+              ? 'bg-red-500 hover:bg-red-600 text-white shadow-red-500/30'
+              : 'bg-sky-500 hover:bg-sky-600 text-slate-900 shadow-sky-500/30'
           }`}
         >
           {isTripActive ? 'Stop Trip' : 'Start Trip'}
         </button>
         <button
             onClick={() => setShowAddFuelModal(true)}
-            className="w-full py-3 px-6 text-lg font-semibold rounded-full bg-gray-700 hover:bg-gray-600 text-white transition-colors duration-200"
+            className="w-full py-3 px-6 text-lg font-semibold rounded-xl bg-slate-700 hover:bg-slate-600 text-white transition-colors duration-200"
         >
             Add Fuel
         </button>

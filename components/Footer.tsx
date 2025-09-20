@@ -1,10 +1,9 @@
-
 import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-16 left-0 right-0 h-6 flex items-center justify-center bg-gray-900 z-40">
-      <p className="text-xs text-gray-500">
+    <footer className="w-full pt-8 pb-4 text-center">
+      <p className="text-xs text-slate-500">
         created by Yash K Pathak
       </p>
     </footer>

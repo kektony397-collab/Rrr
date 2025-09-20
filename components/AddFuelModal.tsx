@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { addFuelEntry } from '../services/db';
 import { FuelEntry } from '../types';
@@ -49,14 +48,14 @@ const AddFuelModal: React.FC<AddFuelModalProps> = ({ onClose, onSave }) => {
     id: string;
   }> = ({ label, value, onChange, placeholder, id }) => (
      <div>
-        <label htmlFor={id} className="block mb-2 text-sm font-medium text-gray-300">{label}</label>
+        <label htmlFor={id} className="block mb-2 text-sm font-medium text-slate-300">{label}</label>
         <input
             type="number"
             id={id}
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            className="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
+            className="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5 placeholder-slate-400"
             required
         />
      </div>
@@ -64,8 +63,8 @@ const AddFuelModal: React.FC<AddFuelModalProps> = ({ onClose, onSave }) => {
 
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-800 rounded-lg shadow-xl w-full max-w-sm p-6 space-y-4">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-slate-800/80 border border-slate-700 rounded-xl shadow-xl w-full max-w-sm p-6 space-y-4">
         <h2 className="text-xl font-bold text-white">Add Fuel Entry</h2>
         
         {error && <p className="text-red-400 text-sm">{error}</p>}
@@ -89,13 +88,13 @@ const AddFuelModal: React.FC<AddFuelModalProps> = ({ onClose, onSave }) => {
         <div className="flex justify-end gap-3 pt-2">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-md text-sm font-medium bg-gray-600 hover:bg-gray-500 text-white transition-colors"
+            className="px-4 py-2 rounded-lg text-sm font-medium bg-slate-600 hover:bg-slate-500 text-white transition-colors"
           >
             Cancel
           </button>
           <button
             onClick={handleSave}
-            className="px-4 py-2 rounded-md text-sm font-medium bg-cyan-600 hover:bg-cyan-700 text-white transition-colors"
+            className="px-4 py-2 rounded-lg text-sm font-medium bg-sky-600 hover:bg-sky-700 text-white transition-colors"
           >
             Save Entry
           </button>
