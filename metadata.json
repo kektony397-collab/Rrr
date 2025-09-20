@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Digital GPS Bike Speedometer",
+  "description": "A modern, web-based digital bike speedometer with real-time GPS tracking, a fuel management system, and detailed data logging stored locally for privacy and offline use.",
+  "requestFramePermissions": []
+}
